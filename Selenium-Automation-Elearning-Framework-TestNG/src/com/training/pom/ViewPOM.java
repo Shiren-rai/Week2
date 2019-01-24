@@ -28,13 +28,10 @@ public class ViewPOM {
 	@FindBy(xpath="//*[@id=\"menu1\"]/span[2]")
 	private WebElement Personal; 
 	
-	@FindBy(xpath="//*[@id=\"menu8\"]/span[2]")
-	private WebElement Menu; 
-	
-	@FindBy(xpath="//*[@id=\"submenu8.0\"]/span[2]")
-	private WebElement Menu1; 
+	@FindBy(xpath="//*[@id=\"submenu1.1\"]/span[2]")
+	private WebElement Messages;  
 	 
-	@FindBy(linkText="Hello")
+	@FindBy(linkText="Loan granted")
 	private WebElement details; 
 	
 	
@@ -57,12 +54,9 @@ public class ViewPOM {
 		this.Personal.click(); 
 	}
 	
-	public void clickMenu() {
-		this.Menu.click(); 
-	}
 	
-	public void clickMenu1() {
-		this.Menu1.click(); 
+	public void clickMessages() {
+		this.Messages.click(); 
 	}
 	
 	public void clickdetails() {

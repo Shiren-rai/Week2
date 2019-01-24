@@ -49,13 +49,13 @@ public class ViewTest {
 		driver.quit();
 	}
 	@Test
-	public void validViewTest() {
-		viewPOM.sendUserName("admin");
-		viewPOM.sendPassword("12345");
+	public void validViewTest() throws InterruptedException {
+		viewPOM.sendUserName("manzoor");
+		viewPOM.sendPassword("manzoor");
 		viewPOM.clickLoginBtn(); 
 		viewPOM.clickPersonal();
-		viewPOM.clickMenu();
-		viewPOM.clickMenu1();
+		viewPOM.clickMessages();
+		Thread.sleep(2000);
 		viewPOM.clickdetails();
 		
 		

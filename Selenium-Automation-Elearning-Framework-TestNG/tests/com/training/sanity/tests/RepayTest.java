@@ -11,15 +11,15 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import com.training.generics.ScreenShot;
-import com.training.pom.LoanPOM;
+import com.training.pom.RepayPOM;
 import com.training.utility.DriverFactory;
 import com.training.utility.DriverNames;
 
-public class LoanInfo {
+public class RepayTest {
 
 	private WebDriver driver;
 	private String baseUrl;
-	private LoanPOM loanPOM;
+	private RepayPOM repayPOM;
 	private static Properties properties;
 	private ScreenShot screenShot;
 
@@ -33,7 +33,7 @@ public class LoanInfo {
 	@BeforeMethod
 	public void setUp() throws Exception {
 		driver = DriverFactory.getDriver(DriverNames.CHROME);
-		loanPOM = new LoanPOM(driver); 
+		repayPOM = new RepayPOM(driver); 
 		baseUrl = properties.getProperty("baseURL");
 		screenShot = new ScreenShot(driver); 
 		// open the browser 
@@ -46,19 +46,19 @@ public class LoanInfo {
 		driver.quit();
 	}
 	@Test
-	public void validLoanInfo() throws InterruptedException {
-		loanPOM.sendUserName("admin");
-		loanPOM.sendPassword("12345");
-		loanPOM.clickLoginBtn(); 
-		loanPOM.clickAccountsBtn();
-		loanPOM.clickManageLoansBtn();
-		loanPOM.clickSearchBtn();
-		loanPOM.clickview();
-		Thread.sleep(2000);
-		loanPOM.clickbackBtn();
+	public void validLoanInfo() {
+		repayPOM.sendUserName("manzoor");
+		repayPOM.sendPassword("manzoor");
+		repayPOM.clickLoginBtn(); 
+		repayPOM.clickAccountsBtn();
+		repayPOM.clickLoansBtn();
+		repayPOM.clickView();
+		repayPOM.sendAmount("10000");
+		repayPOM.clickRepayBtn();
+		repayPOM.Alert();
 		screenShot.captureScreenShot("Accounts");
-		screenShot.captureScreenShot("ManageLoans");
-		screenShot.captureScreenShot("BackButton");
+		screenShot.captureScreenShot("Loans");
+		
 	}
 }
 

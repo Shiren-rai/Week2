@@ -24,11 +24,11 @@ public class RemovePOM {
 	@FindBy(xpath="//*[@id=\"cyclosLogin\"]/table/tbody/tr[3]/td/input")
 	private WebElement loginBtn; 
 	
-	@FindBy(xpath="//*[@id=\"menu8\"]/span[2]")
-	private WebElement Menu; 
+	@FindBy(xpath="//*[@id=\"menu1\"]/span[2]")
+	private WebElement Personal; 
 	
-	@FindBy(xpath="//*[@id=\"submenu8.0\"]/span[2]")
-	private WebElement Menu1; 
+	@FindBy(xpath="//*[@id=\"submenu1.1\"]/span[2]")
+	private WebElement Messages; 
 	
 	@FindBy(xpath="//*[@id=\"tdContents\"]/form[2]/table[1]/tbody/tr[2]/td/table/tbody/tr[2]/td[5]/img")
 	private WebElement MoveToTrash; 
@@ -48,12 +48,12 @@ public class RemovePOM {
 		this.loginBtn.click(); 
 	}
 	
-	public void clickMenu() {
-		this.Menu.click(); 
+	public void clickPersonal() {
+		this.Personal.click(); 
 	}
 	
-	public void clickMenu1() {
-		this.Menu1.click(); 
+	public void clickMessages() {
+		this.Messages.click(); 
 	}
 	
 	public void MoveToTrashBtn() {

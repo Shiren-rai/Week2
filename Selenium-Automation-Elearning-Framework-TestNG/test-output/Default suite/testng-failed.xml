@@ -3,14 +3,14 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.training.sanity.tests.RemoveTest">
+      <class name="com.training.sanity.tests.ViewTest">
         <methods>
-          <include name="tearDown"/>
           <include name="setUp"/>
+          <include name="validViewTest"/>
+          <include name="tearDown"/>
           <include name="setUpBeforeClass"/>
-          <include name="validRemoveTest"/>
         </methods>
-      </class> <!-- com.training.sanity.tests.RemoveTest -->
+      </class> <!-- com.training.sanity.tests.ViewTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

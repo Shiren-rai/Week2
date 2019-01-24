@@ -46,18 +46,20 @@ public class RemoveTest {
 		driver.quit();
 	}
 	@Test
-	public void validRemoveTest() {
-		removePOM.sendUserName("admin");
-		removePOM.sendPassword("12345");
+	public void validRemoveTest() throws InterruptedException {
+		removePOM.sendUserName("manzoor");
+		removePOM.sendPassword("manzoor");
 		removePOM.clickLoginBtn(); 
-		removePOM.clickMenu();
-		removePOM.clickMenu1();
+		removePOM.clickPersonal();
+		removePOM.clickMessages();
 		removePOM.MoveToTrashBtn();
+		Thread.sleep(2000);
 		removePOM.Alert();
 		
 		
-		screenShot.captureScreenShot("Accounts");
-		
+		screenShot.captureScreenShot("Personal");
+		screenShot.captureScreenShot("Messages");
+		screenShot.captureScreenShot("Remove");
 	}
 }
 

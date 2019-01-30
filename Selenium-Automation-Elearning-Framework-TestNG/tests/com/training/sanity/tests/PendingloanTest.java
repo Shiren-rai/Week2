@@ -11,15 +11,15 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import com.training.generics.ScreenShot;
-import com.training.pom.RepayPOM;
+import com.training.pom.PendingloanPOM;
 import com.training.utility.DriverFactory;
 import com.training.utility.DriverNames;
 
-public class RepayTest {
+public class PendingloanTest {
 
 	private WebDriver driver;
 	private String baseUrl;
-	private RepayPOM repayPOM;
+	private PendingloanPOM pendingloanPOM;
 	private static Properties properties;
 	private ScreenShot screenShot;
 
@@ -32,8 +32,8 @@ public class RepayTest {
 
 	@BeforeMethod
 	public void setUp() throws Exception {
-		driver = DriverFactory.getDriver(DriverNames.CHROME);
-		repayPOM = new RepayPOM(driver); 
+		driver = DriverFactory.getDriver(DriverNames.FIREFOX);
+		pendingloanPOM = new PendingloanPOM(driver); 
 		baseUrl = properties.getProperty("baseURL");
 		screenShot = new ScreenShot(driver); 
 		// open the browser 
@@ -46,19 +46,30 @@ public class RepayTest {
 		driver.quit();
 	}
 	@Test
-	public void validRepayTest() {
-		repayPOM.sendUserName("manzoor");
-		repayPOM.sendPassword("manzoor");
-		repayPOM.clickLoginBtn(); 
-		repayPOM.clickAccountsBtn();
-		repayPOM.clickLoansBtn();
-		repayPOM.clickView();
-		repayPOM.sendAmount("10000");
-		repayPOM.clickRepayBtn();
-		repayPOM.Alert();
-		screenShot.captureScreenShot("Accounts");
-		screenShot.captureScreenShot("Loans");
+	public void validPendingloanTest() throws InterruptedException  {
+		pendingloanPOM.sendUserName("Shiren");
+		pendingloanPOM.sendPassword("Shiren");
+		pendingloanPOM.clickLoginBtn(); 
+		pendingloanPOM.clickAccountBtn();
+		pendingloanPOM.clickLoansBtn();
+		pendingloanPOM.clickViewBtn();
+		pendingloanPOM.sendAmount("500");
+		pendingloanPOM.clickRepayBtn(); 
+		pendingloanPOM.Alert(); 
+		Thread.sleep(5000);
+		pendingloanPOM.Alert1();
+		Thread.sleep(5000);
+		pendingloanPOM.clicklogout();
+		pendingloanPOM.Alert2();
+		pendingloanPOM.sendUserName1("admin");
+		pendingloanPOM.sendPassword1("12345");
+		pendingloanPOM.clickLoginBtn1();
+		pendingloanPOM.sendMemlogin("Shiren");
+		pendingloanPOM.clickviewloansBtn(); 
 		
+		screenShot.captureScreenShot("Accounts");
+		screenShot.captureScreenShot("ManageLoans");
+		screenShot.captureScreenShot("BackButton");
 	}
 }
 

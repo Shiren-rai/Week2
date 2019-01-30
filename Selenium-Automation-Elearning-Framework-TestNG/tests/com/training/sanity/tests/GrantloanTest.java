@@ -11,15 +11,15 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import com.training.generics.ScreenShot;
-import com.training.pom.RepayPOM;
+import com.training.pom.GrantloanPOM;
 import com.training.utility.DriverFactory;
 import com.training.utility.DriverNames;
 
-public class RepayTest {
+public class GrantloanTest {
 
 	private WebDriver driver;
 	private String baseUrl;
-	private RepayPOM repayPOM;
+	private GrantloanPOM grantloanPOM;
 	private static Properties properties;
 	private ScreenShot screenShot;
 
@@ -32,8 +32,8 @@ public class RepayTest {
 
 	@BeforeMethod
 	public void setUp() throws Exception {
-		driver = DriverFactory.getDriver(DriverNames.CHROME);
-		repayPOM = new RepayPOM(driver); 
+		driver = DriverFactory.getDriver(DriverNames.FIREFOX);
+		grantloanPOM = new GrantloanPOM(driver); 
 		baseUrl = properties.getProperty("baseURL");
 		screenShot = new ScreenShot(driver); 
 		// open the browser 
@@ -46,19 +46,34 @@ public class RepayTest {
 		driver.quit();
 	}
 	@Test
-	public void validRepayTest() {
-		repayPOM.sendUserName("manzoor");
-		repayPOM.sendPassword("manzoor");
-		repayPOM.clickLoginBtn(); 
-		repayPOM.clickAccountsBtn();
-		repayPOM.clickLoansBtn();
-		repayPOM.clickView();
-		repayPOM.sendAmount("10000");
-		repayPOM.clickRepayBtn();
-		repayPOM.Alert();
-		screenShot.captureScreenShot("Accounts");
-		screenShot.captureScreenShot("Loans");
+	public void validLoanInfo() throws InterruptedException {
+		grantloanPOM.sendUserName("admin");
+		grantloanPOM.sendPassword("12345");
+		grantloanPOM.clickLoginBtn(); 
+		grantloanPOM.sendMemberlogin("Shiren");
+		Thread.sleep(5000);
+		grantloanPOM.clickSubmitBtn(); 
+		grantloanPOM.sendAmount("100000");
+		grantloanPOM.sendDesc("Homeloan");
+		grantloanPOM.clickSubmitBtn1();
+		Thread.sleep(5000);
+		grantloanPOM.clickSubmitBtn2();
+		grantloanPOM.Alert();
+		Thread.sleep(5000);
+		grantloanPOM.clickViewsubmit(); 
+		Thread.sleep(5000);
+		grantloanPOM.clicklogout();
+		grantloanPOM.Alert1();
+		grantloanPOM.sendUserName1("Shiren");
+		grantloanPOM.sendPassword1("Shiren");
+		grantloanPOM.clickLoginBtn1(); 
+		grantloanPOM.clickAccount(); 
+		Thread.sleep(5000);
+		grantloanPOM.clickLoans();
 		
+		screenShot.captureScreenShot("Accounts");
+		screenShot.captureScreenShot("ManageLoans");
+		screenShot.captureScreenShot("BackButton");
 	}
 }
 

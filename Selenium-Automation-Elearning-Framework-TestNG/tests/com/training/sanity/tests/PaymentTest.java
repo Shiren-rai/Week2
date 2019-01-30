@@ -11,15 +11,15 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import com.training.generics.ScreenShot;
-import com.training.pom.RepayPOM;
+import com.training.pom.PaymentPOM;
 import com.training.utility.DriverFactory;
 import com.training.utility.DriverNames;
 
-public class RepayTest {
+public class PaymentTest {
 
 	private WebDriver driver;
 	private String baseUrl;
-	private RepayPOM repayPOM;
+	private PaymentPOM paymentPOM;
 	private static Properties properties;
 	private ScreenShot screenShot;
 
@@ -32,8 +32,8 @@ public class RepayTest {
 
 	@BeforeMethod
 	public void setUp() throws Exception {
-		driver = DriverFactory.getDriver(DriverNames.CHROME);
-		repayPOM = new RepayPOM(driver); 
+		driver = DriverFactory.getDriver(DriverNames.FIREFOX);
+		paymentPOM = new PaymentPOM(driver); 
 		baseUrl = properties.getProperty("baseURL");
 		screenShot = new ScreenShot(driver); 
 		// open the browser 
@@ -46,18 +46,27 @@ public class RepayTest {
 		driver.quit();
 	}
 	@Test
-	public void validRepayTest() {
-		repayPOM.sendUserName("manzoor");
-		repayPOM.sendPassword("manzoor");
-		repayPOM.clickLoginBtn(); 
-		repayPOM.clickAccountsBtn();
-		repayPOM.clickLoansBtn();
-		repayPOM.clickView();
-		repayPOM.sendAmount("10000");
-		repayPOM.clickRepayBtn();
-		repayPOM.Alert();
-		screenShot.captureScreenShot("Accounts");
-		screenShot.captureScreenShot("Loans");
+	public void validPaymentTest() throws InterruptedException {
+		paymentPOM.sendUserName("manzoor");
+		paymentPOM.sendPassword("manzoor");
+		paymentPOM.clickLoginBtn(); 
+		paymentPOM.clickAccount();
+		paymentPOM.clickMemberpay();
+		paymentPOM.sendUser("testprofile");
+		Thread.sleep(5000);
+		paymentPOM.sendAmount("3000");
+		paymentPOM.sendDesc("birth day gift");
+		Thread.sleep(5000);
+		paymentPOM.clickSub();
+		Thread.sleep(5000);
+		paymentPOM.clickSub1();
+		paymentPOM.clickAccountinfo();
+	
+		
+		
+		screenShot.captureScreenShot("Account");
+		screenShot.captureScreenShot("Accountinfo");
+		
 		
 	}
 }

@@ -76,20 +76,12 @@ public class AdvertisementTest {
 		advertisementPOM.clickAdvertisement(); 
 		
 		
-		//Select category = new Select(driver.findElement(By.name("ad(category)")));
-		//category.selectByVisibleText("Example ad Category");
-
 		
 		
-		//driver.switchTo().frame(0);
-		//driver.findElement(By.xpath("/html/body/div[2]/div/div/div/div[3]/form/table[1]/tbody/tr[2]/td/table/tbody/tr[8]/td[2]/div[2]/div/span/span[2]/span/table/tbody/tr[2]/td/iframe")).click();
-		//driver.switchTo().defaultContent();
 		
-		
-
-		screenShot.captureScreenShot("Accounts");
-		screenShot.captureScreenShot("ManageLoans");
-		screenShot.captureScreenShot("BackButton");
+	
+		screenShot.captureScreenShot("Member");
+		screenShot.captureScreenShot("Advertisements");
 	}
 }
 

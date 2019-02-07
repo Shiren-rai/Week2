@@ -1,29 +1,71 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+<testng-results skipped="0" failed="0" ignored="0" total="3" passed="3">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="41702" started-at="2019-01-30T12:08:27Z" finished-at="2019-01-30T12:09:09Z">
+  <suite name="Default suite" duration-ms="42619" started-at="2019-02-07T14:48:53Z" finished-at="2019-02-07T14:49:36Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="41702" started-at="2019-01-30T12:08:27Z" finished-at="2019-01-30T12:09:09Z">
-      <class name="com.training.sanity.tests.AdvertisementTest">
-        <test-method status="PASS" signature="setUpBeforeClass()[pri:0, instance:com.training.sanity.tests.AdvertisementTest@3bfdc050]" name="setUpBeforeClass" is-config="true" duration-ms="19" started-at="2019-01-30T12:08:27Z" finished-at="2019-01-30T12:08:27Z">
+    <test name="Default test" duration-ms="42619" started-at="2019-02-07T14:48:53Z" finished-at="2019-02-07T14:49:36Z">
+      <class name="com.training.sanity.tests.MessagesTest">
+        <test-method status="PASS" signature="setUpBeforeClass()[pri:0, instance:com.training.sanity.tests.MessagesTest@1bce4f0a]" name="setUpBeforeClass" is-config="true" duration-ms="15" started-at="2019-02-07T14:48:53Z" finished-at="2019-02-07T14:48:53Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpBeforeClass -->
-        <test-method status="PASS" signature="setUp()[pri:0, instance:com.training.sanity.tests.AdvertisementTest@3bfdc050]" name="setUp" is-config="true" duration-ms="8390" started-at="2019-01-30T12:08:27Z" finished-at="2019-01-30T12:08:36Z">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.training.sanity.tests.MessagesTest@1bce4f0a]" name="setUp" is-config="true" duration-ms="8868" started-at="2019-02-07T14:48:53Z" finished-at="2019-02-07T14:49:02Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="validAdvertisementTest()[pri:0, instance:com.training.sanity.tests.AdvertisementTest@3bfdc050]" name="validAdvertisementTest" duration-ms="26991" started-at="2019-01-30T12:08:36Z" finished-at="2019-01-30T12:09:03Z">
+        <test-method status="PASS" signature="validMessagesTest()[pri:1, instance:com.training.sanity.tests.MessagesTest@1bce4f0a]" name="validMessagesTest" duration-ms="2932" started-at="2019-02-07T14:49:02Z" finished-at="2019-02-07T14:49:05Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- validAdvertisementTest -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.training.sanity.tests.AdvertisementTest@3bfdc050]" name="tearDown" is-config="true" duration-ms="6266" started-at="2019-01-30T12:09:03Z" finished-at="2019-01-30T12:09:09Z">
+        </test-method> <!-- validMessagesTest -->
+        <test-method status="PASS" signature="Exceldata(java.lang.String, java.lang.String, java.lang.String)[pri:2, instance:com.training.sanity.tests.MessagesTest@1bce4f0a]" name="Exceldata" duration-ms="11579" started-at="2019-02-07T14:49:06Z" data-provider="excel-inputs2" finished-at="2019-02-07T14:49:17Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Manzoorm]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Loans]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Payment done]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Exceldata -->
+        <test-method status="PASS" signature="Exceldata(java.lang.String, java.lang.String, java.lang.String)[pri:2, instance:com.training.sanity.tests.MessagesTest@1bce4f0a]" name="Exceldata" duration-ms="11757" started-at="2019-02-07T14:49:17Z" data-provider="excel-inputs2" finished-at="2019-02-07T14:49:29Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Shiren]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[IBMTest]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[New offer available]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Exceldata -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.training.sanity.tests.MessagesTest@1bce4f0a]" name="tearDown" is-config="true" duration-ms="6660" started-at="2019-02-07T14:49:29Z" finished-at="2019-02-07T14:49:36Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- com.training.sanity.tests.AdvertisementTest -->
+      </class> <!-- com.training.sanity.tests.MessagesTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

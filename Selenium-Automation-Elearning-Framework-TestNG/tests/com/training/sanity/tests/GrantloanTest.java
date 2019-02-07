@@ -46,7 +46,7 @@ public class GrantloanTest {
 		driver.quit();
 	}
 	@Test
-	public void validLoanInfo() throws InterruptedException {
+	public void validGrantloanTest() throws InterruptedException {
 		grantloanPOM.sendUserName("admin");
 		grantloanPOM.sendPassword("12345");
 		grantloanPOM.clickLoginBtn(); 
